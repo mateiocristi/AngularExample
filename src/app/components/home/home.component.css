@@ -1,0 +1,18 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.container {
+
+    margin: 30px auto;
+    padding: 20px 30px;
+    background-color: #f7f7f7;
+    font-family: 'Lucida Sans';
+    text-align: right;
+}
+
+.table-primary {
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+

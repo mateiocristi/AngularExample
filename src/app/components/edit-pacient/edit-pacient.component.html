@@ -1,0 +1,34 @@
+<div class="form">
+    <div class="container">
+        <div class="field">
+            <label>Nume</label>
+            <input type="text" placeholder="Nume" id="nume" [(ngModel)]="nume">
+        </div>
+        <div class="field">
+            <label>Prenume</label>
+            <input type="text" placeholder="Prenume" id="prenume" [(ngModel)]="prenume">
+        </div>
+        <div class="field">
+            <label>Data nasterii</label>
+            <input type="date" placeholder="Data nasterii" id="data" [(ngModel)]="data">
+        </div>
+        <div>
+            <label>Sex</label>
+            <select name="status" id ="status" [(ngModel)]="sex">
+                <option value="F">Feminin</option>
+                <option value="M">Masculin</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>CNP</label>
+            <input type="text" placeholder="" id="CNP" [(ngModel)]="CNP">
+        </div>
+        <div class="field">
+            <label>Telefon</label>
+            <input type="text" placeholder="" id="tel" [(ngModel)]="tel">
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-danger" (click)="EditPacient()">Editare</button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Nume</th>
+                <th scope="col">Prenume</th>
+                <th scope="col">Data Nasterii</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Pasul urmator</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let pacient of pacients">
+            <tr>
+                <td class="table-primary">{{pacient.nume}}</td>
+                <td class="table-primary">{{pacient.prenume}}</td>
+                <td class="table-primary">{{pacient.dataNasterii}}</td>
+                <td class="table-primary">{{pacient.sex}}</td>
+                <td class="table-primary"><button class="btn btn-danger" (click)="handleEditButton($event)" id={{pacient.orderNr}}>Editare</button></td>
+                <td class="table-primary"><button class="btn btn-danger" (click)="handleProceedButton($event)" id={{pacient.orderNr}}>Proceed</button></td>
+            </tr>
+    </table>
+    <button class="btn btn-danger text-right" (click)="handleAddButton()">Add pacient</button>
+</div>
