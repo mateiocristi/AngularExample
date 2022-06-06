@@ -8,7 +8,7 @@ export class PacientService {
         this.counter = 0;
     }
 
-    AddNewPacient(nume, prenume, data, sex, CNP, telefon) {
+    async AddNewPacient(nume, prenume, data, sex, CNP, telefon) {
 
         let orderNr = this.GenerateOrderNr();
 
@@ -26,7 +26,7 @@ export class PacientService {
 
     }
 
-    EditPacient(nume, prenume, data, sex, CNP, telefon, orderNr) {
+    async EditPacient(nume, prenume, data, sex, CNP, telefon, orderNr) {
         this.pacients.forEach(pacient => {
             if (pacient.orderNr === Number(orderNr)) {
                 pacient.nume = nume;
@@ -39,7 +39,7 @@ export class PacientService {
         })
     }
 
-    GetPacient(orderNr) {
+    async GetPacient(orderNr) {
         let pac;
         this.pacients.forEach(pacient => {
             if (pacient.orderNr === Number(orderNr)) {
@@ -49,9 +49,7 @@ export class PacientService {
         return pac;
     }
 
-    RemovePacient(orderNr) {
-       console.log('remove id', orderNr);
-       
+    async RemovePacient(orderNr) {
         const index = this.pacients.findIndex(pacient => {
             return pacient.orderNr === Number(orderNr);
         })

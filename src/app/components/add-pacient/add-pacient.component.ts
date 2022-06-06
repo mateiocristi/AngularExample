@@ -19,10 +19,7 @@ export class AddPacientComponent implements OnInit {
 
   constructor(private pacientService: PacientService, private router: Router) { }
 
-  ngOnInit(): void {
-    console.log('adding pacient ');
-    
-     
+  ngOnInit(): void {  
   }
 
   AddPacient() {

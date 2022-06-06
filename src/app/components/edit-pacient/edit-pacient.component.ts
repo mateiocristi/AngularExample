@@ -20,11 +20,9 @@ export class EditPacientComponent implements OnInit {
 
   constructor(private _Activatedroute: ActivatedRoute, private router: Router, private pacientService: PacientService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.orderNr=this._Activatedroute.snapshot.paramMap.get("id");
-    this.pacient = this.pacientService.GetPacient(this.orderNr);
-    console.log('pacient is  ', this.pacient);
-    
+    this.pacient = await this.pacientService.GetPacient(this.orderNr);
   }
 
   EditPacient() {  
@@ -37,11 +35,7 @@ export class EditPacientComponent implements OnInit {
     this.CNP = this.CNP === undefined ? this.pacient.CNP : this.CNP;
     this.tel = this.tel === undefined ? this.pacient.tel : this.tel;
 
-    console.log('pacient nume ', this.nume);
-    console.log('pacient nume ', this.pacient.nume);
     
-    
-
     this.pacientService.EditPacient(this.nume, this.prenume, this.data, this.sex, this.CNP, this.tel, this.orderNr);
     this.router.navigateByUrl('/');
   }
